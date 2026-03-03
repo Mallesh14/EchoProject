@@ -1,0 +1,27 @@
+﻿src/controllers/product.controller.ts(26,33): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/controllers/product.controller.ts(36,33): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/controllers/product.controller.ts(46,33): error TS2345: Argument of type 'string | string[]' is not assignable to parameter of type 'string'.
+  Type 'string[]' is not assignable to type 'string'.
+src/middlewares/error.middleware.ts(22,35): error TS2339: Property 'errors' does not exist on type 'ZodError<unknown>'.
+src/middlewares/error.middleware.ts(22,47): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/schemas/product.schema.ts(5,26): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(params?: string | { error?: string | $ZodErrorMap<$ZodIssueInvalidType<unknown>> | undefined; message?: string | undefined; } | undefined): ZodString', gave the following error.
+    Object literal may only specify known properties, and 'required_error' does not exist in type '{ error?: string | $ZodErrorMap<$ZodIssueInvalidType<unknown>> | undefined; message?: string | undefined; }'.
+  Overload 2 of 2, '(params?: string | { error?: string | $ZodErrorMap<$ZodIssueInvalidType<unknown>> | undefined; message?: string | undefined; } | undefined): $ZodType<...>', gave the following error.
+    Object literal may only specify known properties, and 'required_error' does not exist in type '{ error?: string | $ZodErrorMap<$ZodIssueInvalidType<unknown>> | undefined; message?: string | undefined; }'.
+src/schemas/product.schema.ts(6,27): error TS2353: Object literal may only specify known properties, and 'required_error' does not exist in type '{ error?: string | $ZodErrorMap<$ZodIssueInvalidType<unknown>> | undefined; message?: string | undefined; }'.
+src/schemas/product.schema.ts(7,27): error TS2353: Object literal may only specify known properties, and 'required_error' does not exist in type '{ error?: string | $ZodErrorMap<$ZodIssueInvalidType<unknown>> | undefined; message?: string | undefined; }'.
+src/schemas/product.schema.ts(24,78): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(def: number): ZodDefault<ZodOptional<ZodPipe<ZodString, ZodTransform<number, string>>>>', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'number'.
+  Overload 2 of 2, '(def: () => number): ZodDefault<ZodOptional<ZodPipe<ZodString, ZodTransform<number, string>>>>', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type '() => number'.
+src/schemas/product.schema.ts(25,79): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(def: number): ZodDefault<ZodOptional<ZodPipe<ZodString, ZodTransform<number, string>>>>', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type 'number'.
+  Overload 2 of 2, '(def: () => number): ZodDefault<ZodOptional<ZodPipe<ZodString, ZodTransform<number, string>>>>', gave the following error.
+    Argument of type 'string' is not assignable to parameter of type '() => number'.
+src/services/product.service.ts(1,10): error TS2305: Module '"@prisma/client"' has no exported member 'PrismaClient'.
+src/services/product.service.ts(1,24): error TS2305: Module '"@prisma/client"' has no exported member 'Prisma'.

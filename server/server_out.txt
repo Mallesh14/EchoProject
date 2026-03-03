@@ -1,0 +1,2 @@
+﻿src/services/product.service.ts(1,10): error TS2305: Module '"@prisma/client"' has no exported member 'PrismaClient'.
+src/services/product.service.ts(1,24): error TS2305: Module '"@prisma/client"' has no exported member 'Prisma'.

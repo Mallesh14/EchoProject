@@ -1,0 +1,6 @@
+﻿src/App.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/components/AddEditProductModal.tsx(4,10): error TS1484: 'Product' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/ProductTable.tsx(2,10): error TS1484: 'Product' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/hooks/useProducts.ts(2,22): error TS1484: 'GetProductsParams' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/hooks/useProducts.ts(2,41): error TS1484: 'Product' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/pages/ProductListPage.tsx(12,10): error TS1484: 'Product' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
