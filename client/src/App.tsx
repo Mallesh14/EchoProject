@@ -3,62 +3,43 @@ import { ProductListPage } from './pages/ProductListPage';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      <header className="bg-white border-b border-gray-200 py-4 shadow-sm relative z-10">
-        <div className="max-w-6xl mx-auto px-6 flex items-center gap-3">
-          <div className="bg-blue-600 text-white p-2 rounded-lg shadow-sm">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m7.5 4.27 9 5.15" /><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" /><path d="m3.3 7 8.7 5 8.7-5" /><path d="M12 22V12" /></svg>
-          </div>
-          <span className="font-bold text-xl text-gray-900 tracking-tight">InventoryManager</span>
-        </div>
-      </header>
-
-      <main className="flex-1 w-full relative">
-        <div className="absolute inset-0 bg-blue-50/30 -z-10 pointer-events-none">
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl opacity-50 mix-blend-multiply"></div>
-          <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl opacity-50 mix-blend-multiply"></div>
-        </div>
-        <ProductListPage />
-      </main>
-
-      <footer className="bg-white border-t border-gray-200 py-6 text-center text-sm text-gray-500">
-        <p>&copy; {new Date().getFullYear()} InventoryManager. All rights reserved.</p>
-      </footer>
+    <>
+      <ProductListPage />
 
       <Toaster
         position="bottom-right"
+        gutter={10}
         toastOptions={{
           duration: 4000,
           style: {
-            background: '#333',
-            color: '#fff',
-            borderRadius: '10px',
-            fontSize: '14px',
-            boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+            background: '#1e2030',
+            color: '#e2e8f0',
+            borderRadius: '12px',
+            fontSize: '13px',
+            fontWeight: '500',
+            border: '1px solid rgba(255,255,255,0.08)',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+            padding: '12px 16px',
           },
           success: {
-            iconTheme: {
-              primary: '#10B981',
-              secondary: '#fff',
-            },
+            iconTheme: { primary: '#a78bfa', secondary: '#1e2030' },
             style: {
-              background: '#fff',
-              color: '#111827',
+              background: '#1e2030',
+              color: '#e2e8f0',
+              borderLeft: '3px solid #a78bfa',
             },
           },
           error: {
-            iconTheme: {
-              primary: '#EF4444',
-              secondary: '#fff',
-            },
+            iconTheme: { primary: '#f87171', secondary: '#1e2030' },
             style: {
-              background: '#fff',
-              color: '#111827',
+              background: '#1e2030',
+              color: '#e2e8f0',
+              borderLeft: '3px solid #f87171',
             },
           },
         }}
       />
-    </div>
+    </>
   );
 }
 

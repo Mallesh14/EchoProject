@@ -1,10 +1,17 @@
 import { Product } from "../models/product.model";
 import { CreateProductInput, UpdateProductInput, GetProductsQuery } from "../schemas/product.schema";
 
+// Mongoose .lean() strips the virtual `.id` getter, so we manually map _id -> id
+function toDTO(doc: any) {
+    if (!doc) return doc;
+    const { _id, __v, ...rest } = doc;
+    return { id: _id.toString(), ...rest };
+}
+
 export class ProductService {
     async createProduct(data: CreateProductInput) {
         const product = await Product.create(data);
-        return product;
+        return toDTO(product.toObject());
     }
 
     async getProducts(query: GetProductsQuery) {
@@ -27,7 +34,7 @@ export class ProductService {
         ]);
 
         return {
-            data: products,
+            data: products.map(toDTO),
             total,
             page,
             totalPages: Math.ceil(total / limit),
@@ -43,7 +50,7 @@ export class ProductService {
             throw error;
         }
 
-        return product;
+        return toDTO(product);
     }
 
     async updateProduct(id: string, data: UpdateProductInput) {
@@ -58,7 +65,7 @@ export class ProductService {
             throw error;
         }
 
-        return product;
+        return toDTO(product);
     }
 
     async deleteProduct(id: string) {

@@ -11,13 +11,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/product_management";
 
-const allowedOrigins = [
-    "http://localhost:5173",
-    process.env.CLIENT_URL,
-].filter(Boolean) as string[];
+console.log("🌐 CLIENT_URL:", process.env.CLIENT_URL);
 
 app.use(cors({
-    origin: allowedOrigins,
+    origin: true, // Reflect the request origin — allows all origins
     credentials: true,
 }));
 app.use(express.json());

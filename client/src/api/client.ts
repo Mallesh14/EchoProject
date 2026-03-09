@@ -10,7 +10,7 @@ export const apiClient = axios.create({
 });
 
 export interface Product {
-    id: number;
+    id: string; // MongoDB ObjectId serialized as string
     name: string;
     price: string; // Decimal comes back as string from API
     stock: number;
@@ -38,7 +38,7 @@ export const productApi = {
         return data;
     },
 
-    getById: async (id: number) => {
+    getById: async (id: string) => {
         const { data } = await apiClient.get<Product>(`/products/${id}`);
         return data;
     },
@@ -48,12 +48,12 @@ export const productApi = {
         return data;
     },
 
-    update: async (id: number, payload: Partial<Omit<Product, 'id' | 'createdAt'>>) => {
+    update: async (id: string, payload: Partial<Omit<Product, 'id' | 'createdAt'>>) => {
         const { data } = await apiClient.put<Product>(`/products/${id}`, payload);
         return data;
     },
 
-    delete: async (id: number) => {
+    delete: async (id: string) => {
         const { data } = await apiClient.delete<{ success: boolean; message: string }>(`/products/${id}`);
         return data;
     },
