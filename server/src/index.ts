@@ -11,7 +11,15 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/product_management";
 
-app.use(cors());
+const allowedOrigins = [
+    "http://localhost:5173",
+    process.env.CLIENT_URL,
+].filter(Boolean) as string[];
+
+app.use(cors({
+    origin: allowedOrigins,
+    credentials: true,
+}));
 app.use(express.json());
 
 // Routes
