@@ -22,6 +22,11 @@ app.use(cors({
 }));
 app.use(express.json());
 
+// Root route
+app.get("/", (req, res) => {
+    res.status(200).json({ message: "✅ Echo API is running", endpoints: ["/health", "/products"] });
+});
+
 // Routes
 app.use("/products", productRoutes);
 
